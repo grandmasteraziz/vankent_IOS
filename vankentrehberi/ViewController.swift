@@ -7,13 +7,10 @@
 //
 
 import UIKit
-import FacebookCore
-import FacebookLogin
-import FacebookShare
-import SDWebImage
+import FBSDKLoginKit
 import EFInternetIndicator
 
-class ViewController: UIViewController, InternetStatusIndicable {
+class ViewController: UIViewController, InternetStatusIndicable ,FBSDKLoginButtonDelegate {
 
     //EFInternetIndicator Lib
     var internetConnectionIndicator:InternetViewIndicator?
@@ -28,11 +25,21 @@ class ViewController: UIViewController, InternetStatusIndicable {
         
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!)
+    {
+        
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!)
+    {
+        
+    }
 
 }
 
