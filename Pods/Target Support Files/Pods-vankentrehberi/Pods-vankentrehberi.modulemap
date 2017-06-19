@@ -1,0 +1,6 @@
+framework module Pods_vankentrehberi {
+  umbrella header "Pods-vankentrehberi-umbrella.h"
+
+  export *
+  module * { export * }
+}
