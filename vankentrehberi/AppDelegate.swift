@@ -8,31 +8,23 @@
 
 import UIKit
 import CoreData
-import FBSDKCoreKit
-import FBSDKLoginKit
-import FBSDKShareKit
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate  {
 
     var window: UIWindow?
+ 
+ 
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+      func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+    {
        
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
         return true
+       
     }
-    
-    //Permission for facebook
-    func application(_ application: UIApplication, open url : URL , sourceApplication : String?, annotation : Any) -> Bool{
-        
-        return FBSDKApplicationDelegate.sharedInstance().application(application ,
-                                                                     open : url,
-                                                                     sourceApplication : sourceApplication ,
-                                                                     annotation: annotation)
-    }
+   
+ 
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
