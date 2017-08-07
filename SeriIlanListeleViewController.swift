@@ -12,9 +12,22 @@ class SeriIlanListeleViewController: UIViewController {
     
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    
+    @IBOutlet weak var isArayanBtn: UIButton!
+    
+    
+    @IBOutlet weak var isVerenBtn: UIButton!
+    
+    @IBOutlet weak var evArkadasiBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        isVerenBtn.layer.cornerRadius = 10
+        isArayanBtn.layer.cornerRadius = 10
+        evArkadasiBtn.layer.cornerRadius = 10
+        
         
         sideMenus()
         
@@ -23,7 +36,6 @@ class SeriIlanListeleViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     

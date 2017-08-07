@@ -8,14 +8,25 @@
 
 import UIKit
 
-class OtoListeleViewController: UIViewController {
+class OtoListeleViewController: UIViewController  {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    
+    @IBOutlet weak var satilikBtn: UIButton!
+    
+    
+    @IBOutlet weak var kiralikBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        kiralikBtn.layer.cornerRadius = 10
+        satilikBtn.layer.cornerRadius = 10
+        
+        
         sideMenus()
+    
+        
         
     }
 
@@ -41,5 +52,7 @@ class OtoListeleViewController: UIViewController {
             
         }
     }//
+    
+   
 
 }

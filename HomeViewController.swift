@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -17,7 +18,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         sideMenus()
-       // customizeNavbar() Eğer navbar ın renginin turuncu olmasını istersen yap
+     //   customizeNavbar() //Eğer navbar ın renginin turuncu olmasını istersen yap
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,14 +7,42 @@
 //
 
 import UIKit
+import EFInternetIndicator
 
-class EmlakListeleViewController: UIViewController {
+class EmlakListeleViewController: UIViewController , InternetStatusIndicable {
 
+    //menu
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    
+    //EFInternetIndicator Lib
+    var internetConnectionIndicator:InternetViewIndicator?
+    
+    @IBOutlet weak var satilikBtn: UIButton!
+    
+    
+    @IBOutlet weak var kiralikBtn: UIButton!
+    
+    
+    @IBOutlet weak var evArkadasiBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        
+        //check internet connection
+        self.startMonitoringInternet(backgroundColor:UIColor.black, style: .CardView , textColor:UIColor.white, message:"Oops...\nInternet Bağlantınızı Kontrol edin!", remoteHostName: "vankent.net")
+        
         sideMenus()
+        
+        satilikBtn.layer.cornerRadius = 10
+        kiralikBtn.layer.cornerRadius = 10
+        evArkadasiBtn.layer.cornerRadius = 10
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

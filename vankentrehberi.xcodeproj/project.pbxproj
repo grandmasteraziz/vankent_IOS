@@ -15,6 +15,12 @@
 		8F248DA01EF80380006A5A94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F248D9E1EF80380006A5A94 /* LaunchScreen.storyboard */; };
 		8F248DAB1EF80380006A5A94 /* vankentrehberiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F248DAA1EF80380006A5A94 /* vankentrehberiTests.swift */; };
 		8F248DB61EF80380006A5A94 /* vankentrehberiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F248DB51EF80380006A5A94 /* vankentrehberiUITests.swift */; };
+		8F3B5AF61F33B7F300447B93 /* SeriIlanEkleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B5AF51F33B7F300447B93 /* SeriIlanEkleViewController.swift */; };
+		8F4AF6DC1F2E784E003E0EBA /* EmlakSatilikListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4AF6DB1F2E784E003E0EBA /* EmlakSatilikListeleViewController.swift */; };
+		8F4AF6DE1F2E8D7C003E0EBA /* EmlakSatilikTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4AF6DD1F2E8D7C003E0EBA /* EmlakSatilikTableViewCell.swift */; };
+		8F4AF6E01F2EB1A3003E0EBA /* EmlakDetailsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4AF6DF1F2EB1A3003E0EBA /* EmlakDetailsCollectionViewController.swift */; };
+		8F4AF6E21F2EB2DF003E0EBA /* EmlakSatilikDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4AF6E11F2EB2DF003E0EBA /* EmlakSatilikDetailsViewController.swift */; };
+		8F4AF6E41F2EB756003E0EBA /* EmlakSatilikDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4AF6E31F2EB756003E0EBA /* EmlakSatilikDetailsCollectionViewCell.swift */; };
 		8F4B33E41F276A58009A2E9E /* KaydolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4B33E31F276A58009A2E9E /* KaydolViewController.swift */; };
 		8F4F0AB31F2B48E1003F32F8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F0AB11F2B48E1003F32F8 /* SWRevealViewController.m */; };
 		8F4F0AB51F2B633F003F32F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F0AB41F2B633F003F32F8 /* HomeViewController.swift */; };
@@ -25,10 +31,26 @@
 		8F5665B31F2B99E900F7F55B /* EtkinlikListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5665B21F2B99E800F7F55B /* EtkinlikListeleViewController.swift */; };
 		8F5665B51F2B9C8100F7F55B /* YasamListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5665B41F2B9C8100F7F55B /* YasamListeleViewController.swift */; };
 		8F5665B71F2B9DCA00F7F55B /* KentRehberiMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5665B61F2B9DCA00F7F55B /* KentRehberiMapsViewController.swift */; };
+		8F835F731F333B520021EB93 /* SeriIsArayanListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F835F721F333B520021EB93 /* SeriIsArayanListeleViewController.swift */; };
+		8F835F751F334ED60021EB93 /* SeriIsVerenListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F835F741F334ED60021EB93 /* SeriIsVerenListeleViewController.swift */; };
+		8F835F771F3351AA0021EB93 /* SeriEvArkadasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F835F761F3351AA0021EB93 /* SeriEvArkadasiViewController.swift */; };
+		8F835F791F3355190021EB93 /* SeriIsArayanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F835F781F3355190021EB93 /* SeriIsArayanTableViewCell.swift */; };
+		8F835F7B1F3357030021EB93 /* SeriIsVerenListeleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F835F7A1F3357030021EB93 /* SeriIsVerenListeleTableViewCell.swift */; };
+		8F835F7D1F3365060021EB93 /* SeriEvArkadasiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F835F7C1F3365060021EB93 /* SeriEvArkadasiTableViewCell.swift */; };
 		8FA21DFB1F253700009E856D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA21DFA1F253700009E856D /* Default-568h@2x.png */; };
 		8FB1992C1F2631730078DDF0 /* GirisYapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB1992B1F2631730078DDF0 /* GirisYapViewController.swift */; };
 		8FB199301F26348B0078DDF0 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB1992F1F26348B0078DDF0 /* Validation.swift */; };
+		8FB95E971F2C7E5D00B7AE5D /* EtkinlikPaginationDenemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB95E961F2C7E5D00B7AE5D /* EtkinlikPaginationDenemeViewController.swift */; };
+		8FB95E991F2CFCAB00B7AE5D /* CampaingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB95E981F2CFCAB00B7AE5D /* CampaingTableViewCell.swift */; };
 		8FD44CB11F294A1B00FB468D /* AnasayfaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD44CB01F294A1B00FB468D /* AnasayfaViewController.swift */; };
+		8FF07C681F322DBA0064EE0F /* EmlakKiralikTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF07C671F322DBA0064EE0F /* EmlakKiralikTableViewCell.swift */; };
+		8FF07C6A1F3230C80064EE0F /* EmlakKiralikListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF07C691F3230C80064EE0F /* EmlakKiralikListeleViewController.swift */; };
+		8FF07C6C1F3255300064EE0F /* EmlakApartListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF07C6B1F3255300064EE0F /* EmlakApartListeleViewController.swift */; };
+		8FF07C6E1F325E8B0064EE0F /* EmlakApartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF07C6D1F325E8B0064EE0F /* EmlakApartTableViewCell.swift */; };
+		8FF07C701F3271250064EE0F /* OtoSatilikListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF07C6F1F3271250064EE0F /* OtoSatilikListeleViewController.swift */; };
+		8FF07C721F3279450064EE0F /* OtoSatilikTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF07C711F3279450064EE0F /* OtoSatilikTableViewCell.swift */; };
+		8FF07C741F32858D0064EE0F /* OtoKiralikListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF07C731F32858C0064EE0F /* OtoKiralikListeleViewController.swift */; };
+		8FF07C761F32879E0064EE0F /* OtoKiralikTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF07C751F32879E0064EE0F /* OtoKiralikTableViewCell.swift */; };
 		A1C09D113396D7444A7BB6AB /* Pods_vankentrehberiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACFA51A5332A49ED9AC7A6DF /* Pods_vankentrehberiUITests.framework */; };
 		B1BB07B14DDB6C8197B33620 /* Pods_vankentrehberi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F881B946D9FE51CA1C70FCA8 /* Pods_vankentrehberi.framework */; };
 		E5D71B8554B44CEE5C635B96 /* Pods_vankentrehberiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7623910BD5FD70F69B96596C /* Pods_vankentrehberiTests.framework */; };
@@ -73,6 +95,12 @@
 		8F248DB11EF80380006A5A94 /* vankentrehberiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vankentrehberiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F248DB51EF80380006A5A94 /* vankentrehberiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vankentrehberiUITests.swift; sourceTree = "<group>"; };
 		8F248DB71EF80380006A5A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F3B5AF51F33B7F300447B93 /* SeriIlanEkleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriIlanEkleViewController.swift; sourceTree = "<group>"; };
+		8F4AF6DB1F2E784E003E0EBA /* EmlakSatilikListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmlakSatilikListeleViewController.swift; sourceTree = "<group>"; };
+		8F4AF6DD1F2E8D7C003E0EBA /* EmlakSatilikTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmlakSatilikTableViewCell.swift; sourceTree = "<group>"; };
+		8F4AF6DF1F2EB1A3003E0EBA /* EmlakDetailsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmlakDetailsCollectionViewController.swift; sourceTree = "<group>"; };
+		8F4AF6E11F2EB2DF003E0EBA /* EmlakSatilikDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmlakSatilikDetailsViewController.swift; path = Pods/EmlakSatilikDetailsViewController.swift; sourceTree = "<group>"; };
+		8F4AF6E31F2EB756003E0EBA /* EmlakSatilikDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmlakSatilikDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8F4B33E31F276A58009A2E9E /* KaydolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaydolViewController.swift; sourceTree = "<group>"; };
 		8F4F0AB01F2B48E0003F32F8 /* vankentrehberi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "vankentrehberi-Bridging-Header.h"; sourceTree = "<group>"; };
 		8F4F0AB11F2B48E1003F32F8 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../../SWRevealViewController.m; sourceTree = "<group>"; };
@@ -85,10 +113,26 @@
 		8F5665B21F2B99E800F7F55B /* EtkinlikListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EtkinlikListeleViewController.swift; sourceTree = "<group>"; };
 		8F5665B41F2B9C8100F7F55B /* YasamListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YasamListeleViewController.swift; sourceTree = "<group>"; };
 		8F5665B61F2B9DCA00F7F55B /* KentRehberiMapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KentRehberiMapsViewController.swift; sourceTree = "<group>"; };
+		8F835F721F333B520021EB93 /* SeriIsArayanListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriIsArayanListeleViewController.swift; sourceTree = "<group>"; };
+		8F835F741F334ED60021EB93 /* SeriIsVerenListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriIsVerenListeleViewController.swift; sourceTree = "<group>"; };
+		8F835F761F3351AA0021EB93 /* SeriEvArkadasiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriEvArkadasiViewController.swift; sourceTree = "<group>"; };
+		8F835F781F3355190021EB93 /* SeriIsArayanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriIsArayanTableViewCell.swift; sourceTree = "<group>"; };
+		8F835F7A1F3357030021EB93 /* SeriIsVerenListeleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriIsVerenListeleTableViewCell.swift; sourceTree = "<group>"; };
+		8F835F7C1F3365060021EB93 /* SeriEvArkadasiTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriEvArkadasiTableViewCell.swift; sourceTree = "<group>"; };
 		8FA21DFA1F253700009E856D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8FB1992B1F2631730078DDF0 /* GirisYapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GirisYapViewController.swift; sourceTree = "<group>"; };
 		8FB1992F1F26348B0078DDF0 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		8FB95E961F2C7E5D00B7AE5D /* EtkinlikPaginationDenemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EtkinlikPaginationDenemeViewController.swift; sourceTree = "<group>"; };
+		8FB95E981F2CFCAB00B7AE5D /* CampaingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaingTableViewCell.swift; sourceTree = "<group>"; };
 		8FD44CB01F294A1B00FB468D /* AnasayfaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnasayfaViewController.swift; sourceTree = "<group>"; };
+		8FF07C671F322DBA0064EE0F /* EmlakKiralikTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmlakKiralikTableViewCell.swift; sourceTree = "<group>"; };
+		8FF07C691F3230C80064EE0F /* EmlakKiralikListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmlakKiralikListeleViewController.swift; sourceTree = "<group>"; };
+		8FF07C6B1F3255300064EE0F /* EmlakApartListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmlakApartListeleViewController.swift; sourceTree = "<group>"; };
+		8FF07C6D1F325E8B0064EE0F /* EmlakApartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmlakApartTableViewCell.swift; sourceTree = "<group>"; };
+		8FF07C6F1F3271250064EE0F /* OtoSatilikListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtoSatilikListeleViewController.swift; sourceTree = "<group>"; };
+		8FF07C711F3279450064EE0F /* OtoSatilikTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtoSatilikTableViewCell.swift; sourceTree = "<group>"; };
+		8FF07C731F32858C0064EE0F /* OtoKiralikListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtoKiralikListeleViewController.swift; sourceTree = "<group>"; };
+		8FF07C751F32879E0064EE0F /* OtoKiralikTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtoKiralikTableViewCell.swift; sourceTree = "<group>"; };
 		8FF7BE6F1EFEAA2000B739E4 /* vankentrehberi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vankentrehberi.entitlements; sourceTree = "<group>"; };
 		ACFA51A5332A49ED9AC7A6DF /* Pods_vankentrehberiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vankentrehberiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F881B946D9FE51CA1C70FCA8 /* Pods_vankentrehberi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vankentrehberi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +251,28 @@
 				8F5665B21F2B99E800F7F55B /* EtkinlikListeleViewController.swift */,
 				8F5665B41F2B9C8100F7F55B /* YasamListeleViewController.swift */,
 				8F5665B61F2B9DCA00F7F55B /* KentRehberiMapsViewController.swift */,
+				8FB95E961F2C7E5D00B7AE5D /* EtkinlikPaginationDenemeViewController.swift */,
+				8FB95E981F2CFCAB00B7AE5D /* CampaingTableViewCell.swift */,
+				8F4AF6DB1F2E784E003E0EBA /* EmlakSatilikListeleViewController.swift */,
+				8F4AF6DD1F2E8D7C003E0EBA /* EmlakSatilikTableViewCell.swift */,
+				8F4AF6DF1F2EB1A3003E0EBA /* EmlakDetailsCollectionViewController.swift */,
+				8F4AF6E11F2EB2DF003E0EBA /* EmlakSatilikDetailsViewController.swift */,
+				8F4AF6E31F2EB756003E0EBA /* EmlakSatilikDetailsCollectionViewCell.swift */,
+				8FF07C671F322DBA0064EE0F /* EmlakKiralikTableViewCell.swift */,
+				8FF07C691F3230C80064EE0F /* EmlakKiralikListeleViewController.swift */,
+				8FF07C6B1F3255300064EE0F /* EmlakApartListeleViewController.swift */,
+				8FF07C6D1F325E8B0064EE0F /* EmlakApartTableViewCell.swift */,
+				8FF07C6F1F3271250064EE0F /* OtoSatilikListeleViewController.swift */,
+				8FF07C711F3279450064EE0F /* OtoSatilikTableViewCell.swift */,
+				8FF07C731F32858C0064EE0F /* OtoKiralikListeleViewController.swift */,
+				8FF07C751F32879E0064EE0F /* OtoKiralikTableViewCell.swift */,
+				8F835F721F333B520021EB93 /* SeriIsArayanListeleViewController.swift */,
+				8F835F741F334ED60021EB93 /* SeriIsVerenListeleViewController.swift */,
+				8F835F761F3351AA0021EB93 /* SeriEvArkadasiViewController.swift */,
+				8F835F781F3355190021EB93 /* SeriIsArayanTableViewCell.swift */,
+				8F835F7A1F3357030021EB93 /* SeriIsVerenListeleTableViewCell.swift */,
+				8F835F7C1F3365060021EB93 /* SeriEvArkadasiTableViewCell.swift */,
+				8F3B5AF51F33B7F300447B93 /* SeriIlanEkleViewController.swift */,
 			);
 			name = Controllers;
 			path = ..;
@@ -514,22 +580,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB95E971F2C7E5D00B7AE5D /* EtkinlikPaginationDenemeViewController.swift in Sources */,
 				8F4B33E41F276A58009A2E9E /* KaydolViewController.swift in Sources */,
 				8F248D9B1EF80380006A5A94 /* vankentrehberi.xcdatamodeld in Sources */,
+				8FF07C721F3279450064EE0F /* OtoSatilikTableViewCell.swift in Sources */,
 				8FD44CB11F294A1B00FB468D /* AnasayfaViewController.swift in Sources */,
 				8F4F0AB31F2B48E1003F32F8 /* SWRevealViewController.m in Sources */,
+				8F4AF6DC1F2E784E003E0EBA /* EmlakSatilikListeleViewController.swift in Sources */,
 				8F5665AF1F2B976B00F7F55B /* OtoListeleViewController.swift in Sources */,
+				8F3B5AF61F33B7F300447B93 /* SeriIlanEkleViewController.swift in Sources */,
+				8F835F7B1F3357030021EB93 /* SeriIsVerenListeleTableViewCell.swift in Sources */,
+				8FF07C6E1F325E8B0064EE0F /* EmlakApartTableViewCell.swift in Sources */,
 				8F4F0AB71F2B709B003F32F8 /* EmlakListeleViewController.swift in Sources */,
 				8F5665B11F2B98B500F7F55B /* KesfetListeleViewController.swift in Sources */,
+				8FF07C761F32879E0064EE0F /* OtoKiralikTableViewCell.swift in Sources */,
+				8F835F771F3351AA0021EB93 /* SeriEvArkadasiViewController.swift in Sources */,
+				8FF07C6A1F3230C80064EE0F /* EmlakKiralikListeleViewController.swift in Sources */,
 				8F248D951EF80380006A5A94 /* ViewController.swift in Sources */,
+				8FF07C701F3271250064EE0F /* OtoSatilikListeleViewController.swift in Sources */,
 				8F5665AD1F2B948A00F7F55B /* SeriIlanListeleViewController.swift in Sources */,
 				8F5665B71F2B9DCA00F7F55B /* KentRehberiMapsViewController.swift in Sources */,
+				8F4AF6DE1F2E8D7C003E0EBA /* EmlakSatilikTableViewCell.swift in Sources */,
+				8F835F751F334ED60021EB93 /* SeriIsVerenListeleViewController.swift in Sources */,
 				8F4F0AB51F2B633F003F32F8 /* HomeViewController.swift in Sources */,
 				8F5665B51F2B9C8100F7F55B /* YasamListeleViewController.swift in Sources */,
+				8FB95E991F2CFCAB00B7AE5D /* CampaingTableViewCell.swift in Sources */,
 				8FB1992C1F2631730078DDF0 /* GirisYapViewController.swift in Sources */,
 				8FB199301F26348B0078DDF0 /* Validation.swift in Sources */,
+				8F835F791F3355190021EB93 /* SeriIsArayanTableViewCell.swift in Sources */,
+				8FF07C6C1F3255300064EE0F /* EmlakApartListeleViewController.swift in Sources */,
+				8F4AF6E21F2EB2DF003E0EBA /* EmlakSatilikDetailsViewController.swift in Sources */,
+				8F4AF6E01F2EB1A3003E0EBA /* EmlakDetailsCollectionViewController.swift in Sources */,
 				8F5665B31F2B99E900F7F55B /* EtkinlikListeleViewController.swift in Sources */,
 				8F248D931EF80380006A5A94 /* AppDelegate.swift in Sources */,
+				8F4AF6E41F2EB756003E0EBA /* EmlakSatilikDetailsCollectionViewCell.swift in Sources */,
+				8FF07C741F32858D0064EE0F /* OtoKiralikListeleViewController.swift in Sources */,
+				8F835F7D1F3365060021EB93 /* SeriEvArkadasiTableViewCell.swift in Sources */,
+				8F835F731F333B520021EB93 /* SeriIsArayanListeleViewController.swift in Sources */,
+				8FF07C681F322DBA0064EE0F /* EmlakKiralikTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
