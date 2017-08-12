@@ -409,6 +409,7 @@
                     </view>
                     <connections>
                         <outlet property="dropdown" destination="ybW-af-Xfa" id="4f9-Cm-2SC"/>
+                        <outlet property="ekleBtn" destination="sY1-yu-4Ey" id="zhM-u8-AMY"/>
                         <outlet property="ilanAciklamaLbl" destination="j10-w7-sEX" id="P4w-QL-XJi"/>
                         <outlet property="ilanAdiLbl" destination="QAy-m0-KzT" id="lb8-fq-e3B"/>
                         <outlet property="ilanTelefonTxt" destination="Kqh-Tn-jdm" id="E11-eC-fdl"/>

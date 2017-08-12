@@ -23,8 +23,8 @@ class SeriIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPick
     //pickerView
     @IBOutlet weak var dropdown: UIPickerView!
   
-    var kategoriID  = 10
-    var uuid : String?
+    var kategoriID :String?
+    var uuid = getUserId
     
     
     
@@ -58,7 +58,7 @@ class SeriIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPick
         
                 let ckey = Array(categories.keys)[row]
               //  print("key : \(ckey)")
-                self.kategoriID = ckey
+               // self.kategoriID = ckey
         
     }
     
@@ -73,47 +73,26 @@ class SeriIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ekleBtn.layer.cornerRadius = 10
+       //ekleBtn.layer.cornerRadius = 10
 
         
         
         ilanAdiLbl.layer.cornerRadius = 10
-        
-        
-        // fetch uyeID
-        DispatchQueue.main.async {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName:"User")
-            
-            request.fetchLimit = 1
-            
-            do{
-                let results = try context.fetch(request)
-                
-                if  let userId = results.first? as Event
-                {
-                    self.uuid = userId
-                    
-                    
-                    
-                }
-                
-                
-                
-                
-            }catch
-            {
-                print(error)
-            }
-            
-        }
-        
- 
+    
+     /*   print("************View Did Load*****")
+            print(getUserId())
+        print("************View Did Load*****") */
         
       
     }
     
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //Buton
     @IBAction func ilanEkle(_ sender: Any) {
         
      
@@ -128,10 +107,7 @@ class SeriIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPick
     
 
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
     
     
@@ -139,59 +115,99 @@ class SeriIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPick
     {
    
         let urlRequest = URL(string : urlString)
-        var _request = URLRequest(url: urlRequest! as URL)
+        var myRequest = URLRequest(url: urlRequest! as URL)
         
-        _request.httpMethod = "POST"
+        myRequest.httpMethod = "POST"
         
         
         let kategoriId = self.kategoriID
-        let adi = ilanAdiLbl.text!
-        let aciklama = ilanAciklamaLbl.text!
-        let telefon = ilanTelefonTxt.text!
-        let uyeID = self.uuid!
+        let adi = ilanAdiLbl.text
+        let aciklama = ilanAciklamaLbl.text
+        let telefon = ilanTelefonTxt.text
+        let uyeID = self.uuid
+        let deneme = 2
+      
+        let parameters = "adi=\(adi!)&aciklama=\(aciklama!)&kategori=\(kategoriId))&usrtel=\(telefon!)&uyeID=\(uyeID)"
+        myRequest.httpBody = parameters.data(using :String.Encoding.utf8)
         
+  
         
-        let parameters = "adi="+adi+"&aciklama="+aciklama+"&kategori="+kategoriId+"&usrtel="+telefon+"&uyeID="+""
-        _request.httpBody = parameters.data(using : String.Encoding.utf8)
-        
-        
-        //Boş alan yoksa
-        if( !(adi.isEmpty) && !(aciklama.isEmpty))
+ 
+        //Boş alan varsa
+        if( (adi?.isEmpty)! || (aciklama?.isEmpty)! )
         {
             
-            let task = URLSession.shared.dataTask(with : _request as URLRequest) { (data, response, error) in
-                
-                if(error != nil)
-                {
-                    self.createAlert(titleText : "Bir Hata Oluştu!" , messageText : "Veriler çekilirken bir hata oluştu. Lütfen internet bağlantınızı kontrol edin")
-                    
-                }else{
-                    
-                    do{
-                        
-                        let json = try JSONSerialization.jsonObject(with : data!, options : .mutableContainers) as! NSDictionary
-                        
-                        print(json)
-                        
-                        
-                    }catch
-                    {
-                        self.createAlert(titleText: "Boş Alan Bırakmayınız", messageText: "Tüm alanları eksiksiz ve doğru şekilde doldurunuz!")
-                    }
-                }
-                
-                
-            }
-            task.resume()
-            
-        }else{
             print("boş alan bırakmayınız")
             self.createAlert(titleText: "Boş Alan Bırakmayınız", messageText: "Tüm alanları eksiksiz ve doğru şekilde doldurunuz!")
             
         }
         
+        let task = URLSession.shared.dataTask(with: myRequest as URLRequest) { (data, response, error) in
+           
+                if error != nil
+                {
+                    print(error!)
+                    
+                }else{
+                    
+                    do{
+                    
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                       //	 print(json!)
+                        
+                    }
+                    catch{
+                        print(error)
+                        
+                    }
+                    
+                }
+            
+            
+        }
+        task.resume()
         
     }//
+    
+    
+    func getUserId() ->Int
+    {
+        
+        var userID : Int?
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        
+        request.fetchLimit = 1
+        
+        do{
+            
+            let results = try context.fetch(request)
+            
+            if results.count > 0
+            {
+                for result in results as! [NSManagedObject]
+                {
+                    if let userid = result.value(forKey: "uid") as? Int
+                    {
+                       // print(userid)
+                        userID = userid
+                    }
+                }
+            }
+            
+            
+            
+        }catch{
+            
+            print(error)
+        }
+       
+      
+        
+        return userID!;
+    }
     
     func createAlert(titleText : String , messageText : String)
     {
