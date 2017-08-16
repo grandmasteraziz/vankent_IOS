@@ -188,10 +188,10 @@ class EmlakApartListeleViewController: UIViewController , UITableViewDelegate , 
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! OtoSatilikTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! EmlakApartTableViewCell
         
-        cell.adiLbl.text = adlar[indexPath.row]
-        cell.fiyatLbl.text = fiyatlar[indexPath.row]
+        cell.Adi.text = adlar[indexPath.row]
+        cell.fiyat.text = fiyatlar[indexPath.row]
         
         //kapak foto
         let imageView = cell.kapakFoto!

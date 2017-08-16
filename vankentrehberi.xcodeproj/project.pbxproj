@@ -25,6 +25,7 @@
 		8F4F0AB31F2B48E1003F32F8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F0AB11F2B48E1003F32F8 /* SWRevealViewController.m */; };
 		8F4F0AB51F2B633F003F32F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F0AB41F2B633F003F32F8 /* HomeViewController.swift */; };
 		8F4F0AB71F2B709B003F32F8 /* EmlakListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F0AB61F2B709B003F32F8 /* EmlakListeleViewController.swift */; };
+		8F51FAFE1F448E9700EF71B3 /* EmlakIlanEkleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F51FAFD1F448E9700EF71B3 /* EmlakIlanEkleViewController.swift */; };
 		8F5665AD1F2B948A00F7F55B /* SeriIlanListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5665AC1F2B948A00F7F55B /* SeriIlanListeleViewController.swift */; };
 		8F5665AF1F2B976B00F7F55B /* OtoListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5665AE1F2B976B00F7F55B /* OtoListeleViewController.swift */; };
 		8F5665B11F2B98B500F7F55B /* KesfetListeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5665B01F2B98B500F7F55B /* KesfetListeleViewController.swift */; };
@@ -107,6 +108,7 @@
 		8F4F0AB21F2B48E1003F32F8 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../../SWRevealViewController.h; sourceTree = "<group>"; };
 		8F4F0AB41F2B633F003F32F8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8F4F0AB61F2B709B003F32F8 /* EmlakListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmlakListeleViewController.swift; sourceTree = "<group>"; };
+		8F51FAFD1F448E9700EF71B3 /* EmlakIlanEkleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmlakIlanEkleViewController.swift; sourceTree = "<group>"; };
 		8F5665AC1F2B948A00F7F55B /* SeriIlanListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriIlanListeleViewController.swift; sourceTree = "<group>"; };
 		8F5665AE1F2B976B00F7F55B /* OtoListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtoListeleViewController.swift; sourceTree = "<group>"; };
 		8F5665B01F2B98B500F7F55B /* KesfetListeleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KesfetListeleViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				8F835F7A1F3357030021EB93 /* SeriIsVerenListeleTableViewCell.swift */,
 				8F835F7C1F3365060021EB93 /* SeriEvArkadasiTableViewCell.swift */,
 				8F3B5AF51F33B7F300447B93 /* SeriIlanEkleViewController.swift */,
+				8F51FAFD1F448E9700EF71B3 /* EmlakIlanEkleViewController.swift */,
 			);
 			name = Controllers;
 			path = ..;
@@ -582,6 +585,7 @@
 			files = (
 				8FB95E971F2C7E5D00B7AE5D /* EtkinlikPaginationDenemeViewController.swift in Sources */,
 				8F4B33E41F276A58009A2E9E /* KaydolViewController.swift in Sources */,
+				8F51FAFE1F448E9700EF71B3 /* EmlakIlanEkleViewController.swift in Sources */,
 				8F248D9B1EF80380006A5A94 /* vankentrehberi.xcdatamodeld in Sources */,
 				8FF07C721F3279450064EE0F /* OtoSatilikTableViewCell.swift in Sources */,
 				8FD44CB11F294A1B00FB468D /* AnasayfaViewController.swift in Sources */,
