@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 class SeriIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPickerViewDataSource, UITextFieldDelegate {
     
 
@@ -23,7 +24,7 @@ class SeriIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPick
     //pickerView
     @IBOutlet weak var dropdown: UIPickerView!
   
-    var kategoriID :String?
+    var kategoriID :Int?
     var uuid = getUserId
     
     
@@ -58,7 +59,7 @@ class SeriIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPick
         
                 let ckey = Array(categories.keys)[row]
               //  print("key : \(ckey)")
-               // self.kategoriID = ckey
+                self.kategoriID = ckey
         
     }
     
@@ -95,13 +96,10 @@ class SeriIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPick
     //Buton
     @IBAction func ilanEkle(_ sender: Any) {
         
-     
+      
         
         
-        let urlString : String = "http://vankent.net/van_kent/web/api/seri/iosekle"
-        
-        
-        addClassFiedAds(urlString : urlString)
+        addClassFiedAds(urlString : "http://vankent.net/van_kent/web/api/seri/iosekle")
         
     }
     
@@ -124,13 +122,15 @@ class SeriIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPick
         let adi = ilanAdiLbl.text
         let aciklama = ilanAciklamaLbl.text
         let telefon = ilanTelefonTxt.text
-        let uyeID = self.uuid
-        let deneme = 2
+       //  let uyeID = getUserId
+        // let deneme = 2
       
-        let parameters = "adi=\(adi!)&aciklama=\(aciklama!)&kategori=\(kategoriId))&usrtel=\(telefon!)&uyeID=\(uyeID)"
+        let parameters = "adi=\(adi!)&aciklama=\(aciklama!)&kategori=\(kategoriId!)&usrtel=\(telefon!)&uyeID=\(getUserId())"
+     //   print("adi=\(adi!)&aciklama=\(aciklama!)&kategori=\(String(describing: kategoriId!))&usrtel=\(telefon!)&uyeID=\(getUserId())")
         myRequest.httpBody = parameters.data(using :String.Encoding.utf8)
         
   
+        //"adi="+adi!+"&aciklama="+aciklama!+"&kategori="+kategoriId!+"&usrtel="+telefon!+"&uyeID="+getUserId()
         
  
         //Boş alan varsa
@@ -151,9 +151,55 @@ class SeriIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPick
                 }else{
                     
                     do{
+                           print(parameters)
                     
-                        let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                       //	 print(json!)
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary
+                        // print(json!)
+                        
+                        if let parseJson = json
+                        {
+                            var message : String!
+                            var status : String!
+                            
+                            message = parseJson["mesaj"] as! String?
+                            status = parseJson["durum"] as! String?
+                            
+                            
+                            
+                            if status == "Basarili"
+                            {
+                                
+                                DispatchQueue.main.async {
+                                    
+                                    
+                                    self.ilanAdiLbl.text = nil
+                                    self.ilanAciklamaLbl.text = nil
+                                    self.ilanTelefonTxt.text = nil
+                                    
+                                    //self.createAlert(titleText: "Başarılı", messageText: "ilanınız Başarıyla Eklendi!")
+                                    
+                                    // Anasayfaya yönlendir
+                                    let storyboard : UIStoryboard = UIStoryboard(name : "Main" , bundle : nil )
+                                    let anasayfaVC = storyboard.instantiateViewController(withIdentifier: "Anasayfa") as! AnasayfaViewController
+                                    
+                                    self.present(anasayfaVC, animated: true, completion: nil)
+                                    
+                                    
+                                }
+                                
+                                
+                            }else{
+                                self.createAlert(titleText: "Başarısız", messageText: "Lütfen, internet bağlantınızı kontrol edin" )
+                            }
+                            
+                            
+                            
+                            
+                        }
+                        
+                     
+                        
+                        
                         
                     }
                     catch{

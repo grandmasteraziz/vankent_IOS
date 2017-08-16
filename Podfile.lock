@@ -1,4 +1,8 @@
 PODS:
+  - BSGridCollectionViewLayout (1.2.0)
+  - BSImagePicker (2.6.0):
+    - BSGridCollectionViewLayout (~> 1.2.0)
+    - UIImageViewModeScaleAspect (= 1.5)
   - EFInternetIndicator (0.2.0):
     - EFInternetIndicator/Interface (= 0.2.0)
     - EFInternetIndicator/Network (= 0.2.0)
@@ -36,18 +40,23 @@ PODS:
     - libwebp
     - SDWebImage/Core
   - SwiftMessages (3.4.0)
+  - UIImageViewModeScaleAspect (1.5)
 
 DEPENDENCIES:
+  - BSImagePicker (~> 2.4)
   - EFInternetIndicator
   - SDWebImage/WebP
 
 SPEC CHECKSUMS:
+  BSGridCollectionViewLayout: 8f12c8e1e08c47057f5a39a6828f4395f043d78f
+  BSImagePicker: 7b740d0a9f23160bcdca01f179445583bd1c09b0
   EFInternetIndicator: 76219397add7b5f2388869fa4d9305d0c6af51e1
   libwebp: 1d5a07c2eb97f9c31bd5f154bb82efc0ea67c6a2
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   SwiftMessages: e20aa1557fde1525ea369361bec4943cc0d08e7c
+  UIImageViewModeScaleAspect: 11a790a0b9d248a13dc63e3a78991f1463b6d84e
 
-PODFILE CHECKSUM: 38614fcb64526f653981c3c47a17a946b08abc71
+PODFILE CHECKSUM: 1a4e8416515a4898e6c4bf0d199393e5a5133fc5
 
 COCOAPODS: 1.2.1

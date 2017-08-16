@@ -11,6 +11,8 @@ target 'vankentrehberi' do
  
   pod 'EFInternetIndicator'
   
+  pod "BSImagePicker", "~> 2.4"
+  
   target 'vankentrehberiTests' do
     inherit! :search_paths
     # Pods for testing
