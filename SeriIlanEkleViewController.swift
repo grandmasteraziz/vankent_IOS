@@ -104,8 +104,6 @@ class SeriIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPick
     }
     
 
-
-
     
     
     

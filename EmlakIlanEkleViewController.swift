@@ -10,8 +10,9 @@ import UIKit
 import CoreData
 import Photos
 import BSImagePicker
+import Alamofire
 
-class EmlakIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPickerViewDataSource, UITextFieldDelegate  {
+class EmlakIlanEkleViewController: UIViewController , UINavigationControllerDelegate , UIImagePickerControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource, UITextFieldDelegate  {
 
     // çoklu foto
     @IBOutlet weak var imgView: UIImageView!
@@ -22,12 +23,33 @@ class EmlakIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPic
     
     @IBOutlet weak var fotoSecBtn: UIButton!
     
+    //kapakFoto
+    @IBOutlet weak var kapakFotoBtn: UIButton!
+    
+    @IBOutlet weak var kapakFotoImg: UIImageView!
+    
+    
+    @IBOutlet weak var kaydetBtn: UIButton!
+    
+    
+    @IBOutlet weak var ilanAdiTxt: UITextField!
+    
+    @IBOutlet weak var ilanAciklamaTxt: UITextField!
+    
+    @IBOutlet weak var ilanFiyatTxt: UITextField!
+    
+    @IBOutlet weak var ilanTelefonTxt: UITextField!
+    
+    
+    
     var kategoriID :Int?
-    var uuid = getUserId
+    
     
     var selectedAssets = [PHAsset]()
     var photoArray = [UIImage]()
     
+    
+    // this is my categories
     var categories = [
         7 : "Kiralık",
         8 : "Satılık",
@@ -74,8 +96,11 @@ class EmlakIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPic
     
     
     
-    // Fotoğraf Seç
+    // Fotoğraf Seç multiple photo
     @IBAction func addImageClicked(_ sender: Any) {
+        
+        self.photoArray.removeAll()
+        self.selectedAssets.removeAll()
         
         let vc = BSImagePickerViewController()
         
@@ -141,19 +166,46 @@ class EmlakIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPic
         print("complete photo array \(self.photoArray)")
         
         
+        
     }
     
     
     
     
     
+    //Kapak Foto Ekle single photo
+    
+    @IBAction func kapakFotoEkle(_ sender: Any) {
+        
+        let myPickerController = UIImagePickerController()
+        myPickerController.delegate = self
+        myPickerController.sourceType = .photoLibrary
+        
+        
+        self.present(myPickerController, animated: true, completion: nil )
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+      
+        kapakFotoImg.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fotoSecBtn.layer.cornerRadius = 5
+        fotoSecBtn.layer.cornerRadius = 12
+        fotoSecBtn.layer.borderWidth = 1
+        fotoSecBtn.layer.borderColor = UIColor.blue.cgColor
+        
+        
+        kapakFotoBtn.layer.cornerRadius = 2
+        
+        kaydetBtn.layer.cornerRadius = 2
         
     }
 
@@ -161,6 +213,73 @@ class EmlakIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPic
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    @IBAction func kaydet(_ sender: Any) {
+        
+        // this is alamofire code. 
+// keep the break point here and try uploading
+        // now run the code let me see ifimages comes here or not
+        let parameters =  [
+            "adi" : self.ilanAdiTxt.text!,
+            "aciklama" : self.ilanAciklamaTxt.text!,
+            "fiyat" : self.ilanFiyatTxt.text!,
+            "kategori" :  kategoriID!,
+            "usrtel" : self.ilanTelefonTxt.text!,
+            "uye_id" :  getUserId()
+           
+        ] as [String : Any]
+        
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(UIImageJPEGRepresentation(self.kapakFotoImg.image!, 1)!, withName: "kapakFoto", mimeType: "image/jpeg")
+            
+            print(self.photoArray.count)
+        
+        
+            
+           
+          for (image) in  self.photoArray {
+            
+            if  let imageData = UIImageJPEGRepresentation(image, 0.6) {
+                multipartFormData.append(imageData, withName: "foto",  mimeType: "image/jpeg")
+                  // multipartFormData.append(, withName: "foto", mimeType: "image/jpeg")
+            }
+            
+                
+            }
+          //multiple -single photo in my web service multiple photo field : foto[] single foto field : kapakFoto
+            
+            for (key, value) in parameters {
+                multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
+            }
+        }, to:"http://vankent.net/van_kent/web/api/emlak/ekleIos")
+        { (result) in
+            switch result {
+            case .success(let upload, _, _):
+                
+                upload.uploadProgress(closure: { (progress) in
+                    //Print progress
+                })
+                
+                upload.responseJSON { response in
+                    print("error__________________")
+                    print(response.result.error)
+                    print("data______________")
+                    print(response.result.value)
+                    print( response.result)
+                }
+                
+            case .failure(let encodingError): break
+               // print(encodingError.description)
+            }
+        }
+        
+    }
+    
+ 
+    
     
     
     func getUserId() ->Int
@@ -214,4 +333,56 @@ class EmlakIlanEkleViewController: UIViewController , UIPickerViewDelegate,UIPic
         self.present(alert, animated: true, completion: nil)
     }
 
+    /*
+     
+     func sendData()
+     {
+     
+     let myUrl = URL(string: "http://vankent.net/van_kent/web/api/emlak/ekle")
+     
+     var request = URLRequest(url: myUrl!)
+     
+     request.httpMethod = "POST"
+     
+     
+     let parameter = [
+     "adi" : self.ilanAdiTxt.text!,
+     "aciklama" : self.ilanAciklamaTxt.text!,
+     "fiyat" : self.ilanFiyatTxt.text!,
+     "kategori" : kategoriID!,
+     "usrtel" : self.ilanTelefonTxt.text!,
+     "uye_id" : getUserId()
+     
+     
+     ] as [String : Any]
+     
+     
+     
+     //boundary gelecek
+     
+     let boundary = generateBoundaryString()
+     
+     
+     request.setValue("multipart/form-data; bounday = \(boundary)" ,forHTTPHeaderField: "Content-Type")
+     
+     let imageData = UIImageJPEGRepresentation(kapakFotoImg.image!,1)
+     
+     if  imageData==nil{
+     
+     createAlert(titleText: "Boş Alan", messageText: "Kapak Fotoğrafını Seçiniz")
+     
+     return;
+     }
+     
+     
+     //  request.httpBody =
+     
+     
+     
+     
+     
+     
+     }
+     */
+    
 }
