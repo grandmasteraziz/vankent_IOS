@@ -105,10 +105,10 @@ class EmlakIlanEkleViewController: UIViewController , UINavigationControllerDele
         let vc = BSImagePickerViewController()
         
         bs_presentImagePickerController(vc, animated: true,
-                                        select: { (asset: PHAsset) -> Void in
+                                        select: { (assets: PHAsset) -> Void in
                                             // User selected an asset.
                                             // Do something with it, start upload perhaps?
-        }, deselect: { (asset: PHAsset) -> Void in
+        }, deselect: { (assets: PHAsset) -> Void in
             // User deselected an assets.
             // Do something, cancel upload?
         }, cancel: { (assets: [PHAsset]) -> Void in
@@ -128,7 +128,7 @@ class EmlakIlanEkleViewController: UIViewController , UINavigationControllerDele
     }
     
     
-    
+     // this one multiple
     
     func convertAssetToImages() -> Void {
         
@@ -173,7 +173,7 @@ class EmlakIlanEkleViewController: UIViewController , UINavigationControllerDele
     
     
     
-    //Kapak Foto Ekle single photo
+    //Kapak Foto Ekle  this one : single photo
     
     @IBAction func kapakFotoEkle(_ sender: Any) {
         
@@ -211,70 +211,71 @@ class EmlakIlanEkleViewController: UIViewController , UINavigationControllerDele
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be recreated. bi dk
     }
     
     
-    
+    //Kaydet Butonu
     @IBAction func kaydet(_ sender: Any) {
         
-        // this is alamofire code. 
-// keep the break point here and try uploading
-        // now run the code let me see ifimages comes here or not
+        print("sunucuya gönderildi")
+    
+       
+        let url = "http://vankent.net/van_kent/web/api/emlak/ekleIos"
+        
         let parameters =  [
             "adi" : self.ilanAdiTxt.text!,
             "aciklama" : self.ilanAciklamaTxt.text!,
             "fiyat" : self.ilanFiyatTxt.text!,
-            "kategori" :  kategoriID!,
+            "kategori" :  String(kategoriID!) ,
             "usrtel" : self.ilanTelefonTxt.text!,
-            "uye_id" :  getUserId()
+            "uye_id" :   String(getUserId())
            
-        ] as [String : Any]
+        ] as [String : String]
         
+       
         
-        Alamofire.upload(multipartFormData: { (multipartFormData) in
-            multipartFormData.append(UIImageJPEGRepresentation(self.kapakFotoImg.image!, 1)!, withName: "kapakFoto", mimeType: "image/jpeg")
+       Alamofire.upload(multipartFormData: { (multipartFormData) in
             
-            print(self.photoArray.count)
-        
-        
-            
-           
-          for (image) in  self.photoArray {
-            
-            if  let imageData = UIImageJPEGRepresentation(image, 0.6) {
-                multipartFormData.append(imageData, withName: "foto",  mimeType: "image/jpeg")
-                  // multipartFormData.append(, withName: "foto", mimeType: "image/jpeg")
-            }
-            
-                
-            }
-          //multiple -single photo in my web service multiple photo field : foto[] single foto field : kapakFoto
-            
+       
+         for (image) in  self.photoArray
+         {
+         
+              if  let imageData = UIImageJPEGRepresentation(image, 0.2)
+              {
+         
+                  multipartFormData.append(imageData, withName: "foto[]",  mimeType: "image/jpeg")
+         
+               }
+         
+           }
+         
+         
             for (key, value) in parameters {
+                 if value is String || value is Int {
                 multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
-            }
-        }, to:"http://vankent.net/van_kent/web/api/emlak/ekleIos")
-        { (result) in
-            switch result {
-            case .success(let upload, _, _):
-                
-                upload.uploadProgress(closure: { (progress) in
-                    //Print progress
-                })
-                
-                upload.responseJSON { response in
-                    print("error__________________")
-                    print(response.result.error)
-                    print("data______________")
-                    print(response.result.value)
-                    print( response.result)
-                }
-                
-            case .failure(let encodingError): break
-               // print(encodingError.description)
-            }
-        }
+                }}
+        
+            multipartFormData.append(UIImageJPEGRepresentation(self.kapakFotoImg.image!, 1)!, withName: "kapakFoto", mimeType: "image/jpeg")
+        },
+                         to:"http://vankent.net/van_kent/web/api/emlak/ekleIos",
+                         encodingCompletion: { (result) in
+                            switch result {
+                            case .success(let upload, _, _):
+                                
+                                upload.uploadProgress(closure: { (progress) in
+                                    //Print progress
+                                })
+                                
+                                upload.responseJSON { response in
+                                    print( response.result)
+                                    print(response.value)
+                                }
+                                
+                            case .failure(let encodingError):
+                                 print(encodingError)
+                            }
+        })
         
     }
     
