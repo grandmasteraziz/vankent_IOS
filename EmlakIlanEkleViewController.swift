@@ -233,30 +233,41 @@ class EmlakIlanEkleViewController: UIViewController , UINavigationControllerDele
            
         ] as [String : String]
         
-       
         
        Alamofire.upload(multipartFormData: { (multipartFormData) in
             
-       
+         // album
          for (image) in  self.photoArray
          {
-         
               if  let imageData = UIImageJPEGRepresentation(image, 0.2)
               {
-         
-                  multipartFormData.append(imageData, withName: "foto[]",  mimeType: "image/jpeg")
+                   // TODO: Change format to "ilanId_foto_fotoNo_timestamp.jpeg"
+                  // unique name format: userId_foto_timestamp.jpeg
+                  let timestamp = NSDate().timeIntervalSince1970
+                  let foto_name = String(self.getUserId())
+                                  + "_foto_"
+                                  + String(timestamp).replacingOccurrences(of: ".", with: "")
+                  // append
+                multipartFormData.append(imageData, withName: "foto[]",  fileName: "\(foto_name).jpeg", mimeType: "image/jpeg")
          
                }
          
            }
-         
-         
-            for (key, value) in parameters {
+        
+        // kapak
+        //unique name format: userId_kapak_timestamp.jpeg
+        let timestamp = NSDate().timeIntervalSince1970
+        let kapak_name = String(self.getUserId())
+            + "_kapak_"
+            + String(timestamp).replacingOccurrences(of: ".", with: "")
+        //append
+        multipartFormData.append(UIImageJPEGRepresentation(self.kapakFotoImg.image!, 1)!, withName: "kapakFoto", fileName: "\(kapak_name).jpeg", mimeType: "image/jpeg")
+        
+        // parameters
+         for (key, value) in parameters {
                  if value is String || value is Int {
                 multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
                 }}
-        
-            multipartFormData.append(UIImageJPEGRepresentation(self.kapakFotoImg.image!, 1)!, withName: "kapakFoto", mimeType: "image/jpeg")
         },
                          to:"http://vankent.net/van_kent/web/api/emlak/ekleIos",
                          encodingCompletion: { (result) in
